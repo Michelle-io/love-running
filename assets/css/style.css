@@ -2,8 +2,11 @@
 * {
   margin: 0;
   padding: 0;
-  border: 0;
+  border: none;
+  list-style: none;
+  text-decoration: none;
 }
+
 body {
   font-family: Lato, sans-serif;
   font-weight: 300;
@@ -21,31 +24,34 @@ h2 {
 }
 
 #logo {
-  float: left;
-  font-size: 280%;
+  font-size: 2rem;
 }
 
 /* navigation Links */
 
+header {
+  margin: 0.5rem 0;
+  padding-inline: 1rem;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 #menu {
-  font-size: 100%;
+  display: flex;
+  column-gap: 0.5rem;
+  font-size: 1rem;
   letter-spacing: 4px;
-}
-
-#menu #logo {
-  line-height: 75px;
-}
-
-#menu li {
-  float: right;
-  list-style-type: none;
-  margin-right: 30px;
 }
 
 #menu a {
   text-decoration: none;
   color: inherit;
 }
+
 #menu a:hover {
   border-bottom: 1px solid #3a3a3a;
 }
@@ -55,9 +61,9 @@ h2 {
 }
 
 #hero-image {
-  height: 600px;
+  height: 100%;
   width: 100%;
-  background: url("../images/hero-image.webp") no repeat center center;
+  background: url("../images/hero-image.webp") no-repeat center center;
   animation-name: hero-zoom;
   animation-duration: 5s;
   animation-fill-mode: forwards;
@@ -72,8 +78,7 @@ h2 {
   height: 600px;
   width: 100%;
   overflow: hidden;
-
-  position: absolute;
+  position: relative;
 }
 
 @keyframes hero-zoom {
@@ -104,4 +109,51 @@ h2 {
   right: 150px;
 
   position: absolute;
+}
+
+/* club ethos */
+
+#club-ethos {
+  height: 600px;
+}
+
+#left-about {
+  padding-top: 30px;
+  width: 33%;
+  float: left;
+  background-color: blue;
+}
+
+#right-about {
+  padding-top: 30px;
+  width: 33%;
+  float: right;
+  background-color: silver;
+}
+
+#center-about {
+  width: 33%;
+  margin: 0 auto;
+  background-color: green;
+}
+
+/* footer*/
+
+footer {
+  height:150px;
+}
+
+social-networks {
+    text-align:center;
+}
+
+social-networks > li {
+  display: inline;
+}
+
+social-networks i {
+  font-size: 160%
+  margin: 1%;
+  padding:5%;
+  color:#3a3a3a
 }

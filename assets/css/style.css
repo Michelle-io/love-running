@@ -5,6 +5,7 @@
   border: none;
   list-style: none;
   text-decoration: none;
+  box-sizing: border-box;
 }
 
 body {
@@ -113,26 +114,63 @@ nav {
 
 /* club ethos */
 
-#club-ethos {
-  height: 600px;
+@media screen and (max-width: 999px) {
+  #club-ethos {
+    max-width: 600px;
+    margin: 0 auto;
+    padding-inline: 1rem;
+  }
 }
 
-#left-about {
-  padding-top: 30px;
-  width: 33%;
-  float: left;
+#club-ethos h2 {
+  border-bottom: 1px solid gray;
 }
 
-#right-about {
-  padding-top: 30px;
-  width: 33%;
-  float: right;
+@media screen and (min-width: 1000px) {
+  #club-ethos > div:nth-child(1),
+  div:nth-child(2) {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
 }
 
-#center-about {
-  width: 33%;
-  margin: 0 auto;
-  background-color: green;
+@media screen and (min-width: 1000px) {
+  #club-ethos {
+    display: grid;
+    grid-column-gap: 1rem;
+  }
+}
+
+#left-about > div:nth-child(2),
+#right-about > div,
+#circle-container > div:nth-child(1) {
+  margin-top: 1.5rem;
+}
+
+@media screen and (min-width: 1000px) {
+  #right-about {
+    grid-column-start: 3;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  #circle-container {
+    grid-column-start: 2;
+    grid-row-start: 1;
+  }
+}
+
+#circle-container {
+  text-align: center;
+}
+
+#circle-container img {
+  height: 400px;
+  width: 400px;
+  border-radius: 50%;
+  border: 0.5px solid gray;
+  padding: 0.5rem;
 }
 
 footer {
@@ -160,51 +198,10 @@ hr {
   margin: 50px 0;
 }
 
-.left-about-heading {
-  width: 60%;
-  float: right;
-  line-height: 20px;
-  clear: both;
-  margin-bottom: 50px;
-}
-
-.right-about-heading {
-  width: 60%;
-  float: left;
-  line-height: 20px;
-  clear: both;
-  margin-bottom: 50px;
-}
-
-.right-about-heading h2 {
-  text-align: right;
-}
-
-.right-about-heading {
-  text-align: right;
-}
-
 #welcome {
   text-align: center;
   margin: 20px 0;
   font-size: 280%;
-}
-
-#circle-container {
-  width: 300px;
-  height: 300px;
-  padding: 30px;
-  border-style: solid;
-  border-color: #ccc;
-  border-width: 1px;
-  border-radius: 50%;
-  margin: 0 auto;
-}
-
-#circle-cover-bg {
-  background: url("../images/ethos-center-image.jpg") no-repeat center center;
-  height: 100%;
-  border-radius: 50%;
 }
 
 /* event times */
@@ -220,7 +217,7 @@ hr {
 
 #times div {
   color: #fafafa;
-  background-color: rgba(0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0.6);
   width: 20%;
   height: 300px;
   float: left;
@@ -245,28 +242,37 @@ hr {
   width: 100%;
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 950px) {
+  #menu {
+    clear: left;
+    float: left;
+    margin-left: 30px;
+    margin-bottom: 20px;
+    line-height: 25px;
+  }
+
+  #cover-text {
+    left: 0;
+  }
+
   #club-ethos {
-    width: 65%;
+    width: 90%;
     height: 1200px;
     margin: 0 auto;
   }
-  #welcome {
-    padding: 30px 0;
-    margin: 0;
+
+  .left-about-heading,
+  .right-about-heading {
+    width: inherit;
+  }
+  .left-about-heading h2,
+  .right-about-heading h2 {
+    width: 100%;
+    text-align: center;
   }
 
-  #left-about,
-  #right-about {
-    width: 100%;
-    float: left;
-    padding: 0;
+  .left-about-heading p,
+  .right-about-heading p {
+    text-align: center;
+    padding:0 20px;
   }
-
-  #center-about {
-    clear: both;
-    width: 100%;
-    float: left;
-    padding: 0;
-  }
-}
